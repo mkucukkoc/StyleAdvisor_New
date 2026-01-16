@@ -597,17 +597,33 @@
       "termsNote": "By subscribing, you agree to our Terms and Privacy Policy"
     },
     "checkout": {
-      "title": "Complete Purchase",
-      "selectedPlan": "Selected Plan",
+      "title": "Checkout",
+      "plans": {
+        "monthly": {
+          "title": "Premium Monthly"
+        },
+        "yearly": {
+          "title": "Premium Yearly"
+        }
+      },
+      "summary": "Order Summary",
+      "tax": "Tax",
       "total": "Total",
-      "payButton": "Subscribe Now",
-      "securePayment": "Secure payment powered by Apple/Google"
+      "purchaseButton": "Purchase Now",
+      "securePayment": "Secure payment via App Store",
+      "termsNote": "By purchasing, you agree to our",
+      "termsLink": "Terms and Conditions"
     },
     "success": {
       "title": "Welcome to Premium!",
-      "subtitle": "You now have access to all features",
-      "features": "Your Premium Features",
-      "startButton": "Start Exploring"
+      "subtitle": "You now have unlimited access to all features",
+      "features": {
+        "unlimited": "Unlimited style analyses per day",
+        "suggestions": "All outfit suggestions unlocked",
+        "insights": "Advanced style insights & tips",
+        "exclusive": "Exclusive premium content"
+      },
+      "continueButton": "Start Exploring"
     },
     "limitReached": {
       "title": "Daily Limit Reached",
