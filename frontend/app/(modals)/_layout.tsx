@@ -20,6 +20,8 @@ export default function ModalsLayout() {
       }}
     >
       <Stack.Screen name="paywall" />
+      <Stack.Screen name="checkout" />
+      <Stack.Screen name="premium-success" />
     </Stack>
   );
 }
