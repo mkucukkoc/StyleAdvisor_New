@@ -612,5 +612,95 @@
     "wardrobe": "Wardrobe",
     "favorites": "Favorites",
     "profile": "Profile"
+  },
+  "legal": {
+    "terms": {
+      "title": "Terms of Use",
+      "lastUpdated": "Last Updated",
+      "footer": "By using StyleAdvisor AI, you agree to these terms.",
+      "sections": {
+        "acceptance": {
+          "title": "1. Acceptance of Terms",
+          "content": "By accessing and using StyleAdvisor AI, you accept and agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use our service."
+        },
+        "services": {
+          "title": "2. Our Services",
+          "content": "StyleAdvisor AI provides AI-powered fashion analysis and styling recommendations. Our service analyzes photos and text descriptions to provide personalized outfit suggestions and shopping recommendations."
+        },
+        "userContent": {
+          "title": "3. User Content",
+          "content": "You retain ownership of any photos or content you upload. By uploading content, you grant us a license to use it for providing our services. We do not share your personal photos with third parties."
+        },
+        "premium": {
+          "title": "4. Premium Subscription",
+          "content": "Premium features require a paid subscription. Subscriptions auto-renew unless cancelled. Refunds are subject to the applicable app store policies."
+        },
+        "liability": {
+          "title": "5. Limitation of Liability",
+          "content": "Our fashion recommendations are for informational purposes only. We are not responsible for purchasing decisions made based on our suggestions."
+        },
+        "termination": {
+          "title": "6. Termination",
+          "content": "We reserve the right to terminate or suspend your account for violations of these terms. You may delete your account at any time through the app settings."
+        }
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last Updated",
+      "gdprTitle": "GDPR Compliant",
+      "gdprText": "We are committed to protecting your privacy and complying with GDPR regulations.",
+      "sections": {
+        "dataCollection": {
+          "title": "Data We Collect",
+          "content": "We collect information you provide directly, including account details, photos for analysis, style preferences, and wardrobe items. We also collect usage data to improve our services."
+        },
+        "dataUsage": {
+          "title": "How We Use Your Data",
+          "content": "We use your data to provide personalized style recommendations, improve our AI models, send notifications you've opted into, and process payments for premium features."
+        },
+        "dataSharing": {
+          "title": "Data Sharing",
+          "content": "We do not sell your personal data. We may share anonymized data with partners to improve our services. Affiliate links may track purchases for commission purposes."
+        },
+        "security": {
+          "title": "Data Security",
+          "content": "We implement industry-standard security measures including encryption and secure servers. Photos are processed securely and are not stored longer than necessary."
+        },
+        "rights": {
+          "title": "Your Rights",
+          "content": "You have the right to access, correct, or delete your personal data. You can export your data or request account deletion through the app settings."
+        },
+        "cookies": {
+          "title": "Cookies & Tracking",
+          "content": "We use cookies and similar technologies to improve user experience and analyze app usage. You can manage your preferences in the app settings."
+        },
+        "contact": {
+          "title": "Contact Us",
+          "content": "For privacy inquiries, contact us at privacy@styleadvisor.ai. We aim to respond within 30 days."
+        }
+      }
+    },
+    "affiliate": {
+      "title": "Affiliate Disclosure",
+      "heading": "How We Make Money",
+      "intro": "StyleAdvisor AI participates in affiliate marketing programs. This means we may earn commissions when you purchase products through links in our app.",
+      "howItWorks": "How It Works",
+      "howItWorksContent": "When we recommend products, some may include affiliate links. If you click and make a purchase, we receive a small commission at no extra cost to you.",
+      "whatYouShouldKnow": "What You Should Know",
+      "bullets": {
+        "commission": "We earn a small commission from qualifying purchases",
+        "prices": "Prices are the same whether you use our links or not",
+        "honest": "Our recommendations are based on style analysis, not commission rates",
+        "support": "Your purchases help support the development of StyleAdvisor AI"
+      },
+      "closing": "We only recommend products we believe will genuinely help your style. Thank you for supporting StyleAdvisor AI!"
+    }
+  },
+  "product": {
+    "selectSize": "Select Size",
+    "selectColor": "Select Color",
+    "affiliateNote": "Opens in external browser",
+    "buyNow": "Buy Now"
   }
 }
