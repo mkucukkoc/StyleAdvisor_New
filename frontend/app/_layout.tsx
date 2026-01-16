@@ -77,13 +77,19 @@ export default function RootLayout() {
   useEffect(() => {
     async function prepare() {
       try {
-        // Load fonts
-        await Font.loadAsync({
+        // Load fonts - with timeout for web compatibility
+        const fontLoadPromise = Font.loadAsync({
           Inter_400Regular,
           Inter_500Medium,
           Inter_600SemiBold,
           Inter_700Bold,
         });
+        
+        // Set a timeout for font loading (web fallback)
+        const timeoutPromise = new Promise((resolve) => setTimeout(resolve, 3000));
+        
+        await Promise.race([fontLoadPromise, timeoutPromise]);
+        
         // Load saved language preference
         await loadSavedLanguage();
       } catch (e) {
