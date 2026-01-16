@@ -522,19 +522,49 @@
     },
     "deleteAccount": {
       "title": "Delete Account",
-      "warning": "This action cannot be undone",
-      "description": "Deleting your account will permanently remove all your data, including your wardrobe, favorites, and analysis history.",
-      "confirmLabel": "Type DELETE to confirm",
-      "deleteButton": "Delete My Account",
-      "cancel": "Cancel"
+      "warningTitle": "Warning: Permanent Action",
+      "warningText": "This action is irreversible. All your data will be permanently deleted and cannot be recovered.",
+      "whatWillBeDeleted": "What Will Be Deleted",
+      "items": {
+        "profile": "Your profile and personal information",
+        "wardrobe": "All wardrobe items and photos",
+        "analyses": "Analysis history and results",
+        "favorites": "Saved outfits and products",
+        "subscription": "Premium subscription (if any)"
+      },
+      "understandCheckbox": "I understand that this action is permanent and cannot be undone",
+      "typeToConfirm": "Type {{word}} to confirm",
+      "deleteButton": "Permanently Delete Account",
+      "finalConfirmTitle": "Final Confirmation",
+      "finalConfirmMessage": "Are you absolutely sure? This will permanently delete your account and all associated data.",
+      "success": "Your account has been deleted",
+      "error": "Failed to delete account. Please try again."
     },
-    "exportData": {
+    "dataExport": {
       "title": "Export My Data",
-      "description": "Download a copy of all your data including your profile, wardrobe, favorites, and analysis history.",
-      "exportButton": "Request Data Export",
-      "processing": "Preparing your data...",
-      "success": "Your data export is ready!",
-      "downloadButton": "Download"
+      "info": "You can request a copy of all your personal data stored in StyleAdvisor AI. The export will be prepared and available for download within 24 hours.",
+      "selectData": "Select Data to Export",
+      "types": {
+        "all": "All Data",
+        "profile": "Profile Information",
+        "wardrobe": "Wardrobe Items",
+        "analyses": "Analysis History",
+        "favorites": "Favorites"
+      },
+      "status": {
+        "processing": "Preparing Your Export",
+        "processingText": "We're preparing your data. This may take a few minutes.",
+        "ready": "Export Ready",
+        "readyText": "Your data export is ready for download.",
+        "error": "Export Failed",
+        "errorText": "Something went wrong. Please try again."
+      },
+      "requestButton": "Request Data Export",
+      "processingButton": "Processing...",
+      "downloadButton": "Download Export",
+      "requestSuccess": "Export request submitted successfully",
+      "requestError": "Failed to request export. Please try again.",
+      "downloadStarted": "Download started"
     }
   },
   "premium": {
