@@ -6,7 +6,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../theme/ThemeContext';
-import { useUIStore } from '../../stores';
+import { useUIStore } from '../stores';
 
 export const OfflineBanner: React.FC = () => {
   const { theme } = useTheme();
