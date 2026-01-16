@@ -83,18 +83,28 @@ export default function RootLayout() {
           Inter_500Medium,
           Inter_600SemiBold,
           Inter_700Bold,
+        }).catch(() => {
+          console.warn('Font loading failed, using system fonts');
         });
         
-        // Set a timeout for font loading (web fallback)
-        const timeoutPromise = new Promise((resolve) => setTimeout(resolve, 3000));
+        // Set a timeout for font loading (web fallback - 2 seconds max)
+        const timeoutPromise = new Promise<void>((resolve) => setTimeout(resolve, 2000));
         
         await Promise.race([fontLoadPromise, timeoutPromise]);
         
-        // Load saved language preference
-        await loadSavedLanguage();
+        // Load saved language preference with timeout
+        try {
+          await Promise.race([
+            loadSavedLanguage(),
+            new Promise<void>((resolve) => setTimeout(resolve, 1000))
+          ]);
+        } catch (langError) {
+          console.warn('Language loading failed:', langError);
+        }
       } catch (e) {
         console.warn('Error loading assets:', e);
       } finally {
+        console.log('App is ready');
         setAppIsReady(true);
       }
     }
