@@ -7,7 +7,7 @@ import { View, Text, StyleSheet, Animated, TouchableOpacity } from 'react-native
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../theme/ThemeContext';
 import { useUIStore } from '../stores';
-import { Toast as ToastType } from '../../types';
+import { Toast as ToastType } from '../types';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const ToastItem: React.FC<{ toast: ToastType }> = ({ toast }) => {
