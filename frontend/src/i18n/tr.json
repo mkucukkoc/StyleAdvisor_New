@@ -218,6 +218,59 @@
       "startFirst": "İlk analizinizi başlatın"
     }
   },
+  "trends": {
+    "title": "Trendler & İlham",
+    "filters": {
+      "title": "Trendleri Filtrele",
+      "categories": "Kategoriler",
+      "styles": "Stiller",
+      "seasons": "Mevsimler"
+    },
+    "empty": "Trend bulunamadı",
+    "emptySubtitle": "Filtrelerinizi ayarlamayı deneyin"
+  },
+  "wardrobe": {
+    "home": {
+      "title": "Dolabım",
+      "addItem": "Öğe Ekle",
+      "empty": "Dolabınız boş",
+      "emptySubtitle": "Dijital dolabınızı oluşturmak için öğe eklemeye başlayın"
+    },
+    "categories": {
+      "all": "Tümü",
+      "tops": "Üstler",
+      "bottoms": "Altlar",
+      "dresses": "Elbiseler",
+      "outerwear": "Dış Giyim",
+      "shoes": "Ayakkabılar",
+      "accessories": "Aksesuarlar",
+      "bags": "Çantalar"
+    },
+    "addItem": {
+      "title": "Dolaba Öğe Ekle",
+      "photo": "Öğe Fotoğrafı",
+      "takePhoto": "Fotoğraf Çek",
+      "selectPhoto": "Galeriden Seç",
+      "name": "Öğe Adı",
+      "namePlaceholder": "örn., Mavi Oxford Gömlek",
+      "category": "Kategori",
+      "brand": "Marka (İsteğe Bağlı)",
+      "brandPlaceholder": "örn., Ralph Lauren",
+      "color": "Renk",
+      "saveButton": "Dolaba Kaydet"
+    },
+    "itemDetail": {
+      "title": "Öğe Detayları",
+      "edit": "Düzenle",
+      "delete": "Sil",
+      "deleteConfirm": "Bu öğeyi silmek istediğinizden emin misiniz?",
+      "wornWith": "Birlikte Giyildi"
+    },
+    "outfitBuilder": {
+      "title": "Kombin Oluşturucu",
+      "description": "Dolabınızdaki öğeleri karıştırıp eşleştirin"
+    }
+  },
   "analyze": {
     "start": {
       "title": "Stilinizi Analiz Edin",
