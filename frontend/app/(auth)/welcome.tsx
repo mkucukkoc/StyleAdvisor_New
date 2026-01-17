@@ -140,8 +140,14 @@ export default function WelcomeScreen() {
 
       <View style={styles.bottomSection}>
         <Button
+          title="🚀 Demo Giriş (Hızlı Erişim)"
+          onPress={handleDemoLogin}
+          fullWidth
+        />
+        <Button
           title={t('auth.welcome.loginButton')}
           onPress={() => router.push('/(auth)/login')}
+          variant="outline"
           fullWidth
         />
         <Button
