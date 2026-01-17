@@ -134,10 +134,23 @@ export default function FavoritesHomeScreen() {
       <View>
         {outfits.map((outfit) => (
           <TouchableOpacity key={outfit.id} style={styles.outfitCard}>
-            <Text style={styles.outfitName}>{outfit.name}</Text>
-            <Text style={styles.outfitMeta}>
-              {outfit.occasion} · {outfit.items.length} items · ${outfit.totalPrice}
-            </Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              {outfit.imageUrl ? (
+                <Image
+                  source={{ uri: outfit.imageUrl }}
+                  style={{ width: 80, height: 100, borderRadius: 12, marginRight: 16 }}
+                  resizeMode="cover"
+                />
+              ) : (
+                <View style={{ width: 80, height: 100, borderRadius: 12, marginRight: 16, backgroundColor: theme.colors.border }} />
+              )}
+              <View style={{ flex: 1 }}>
+                <Text style={styles.outfitName}>{outfit.name}</Text>
+                <Text style={styles.outfitMeta}>
+                  {outfit.occasion} · {outfit.items.length} items · ${outfit.totalPrice}
+                </Text>
+              </View>
+            </View>
           </TouchableOpacity>
         ))}
       </View>
@@ -162,14 +175,22 @@ export default function FavoritesHomeScreen() {
         {products.map((product) => (
           <TouchableOpacity key={product.id} style={styles.productCard}>
             <View style={styles.productImage}>
-              <View
-                style={{
-                  width: 50,
-                  height: 50,
-                  borderRadius: 8,
-                  backgroundColor: product.colors[0] || theme.colors.primary,
-                }}
-              />
+              {product.imageUrl ? (
+                <Image
+                  source={{ uri: product.imageUrl }}
+                  style={{ width: '100%', height: '100%', borderRadius: 8 }}
+                  resizeMode="cover"
+                />
+              ) : (
+                <View
+                  style={{
+                    width: 50,
+                    height: 50,
+                    borderRadius: 8,
+                    backgroundColor: product.colors[0] || theme.colors.primary,
+                  }}
+                />
+              )}
             </View>
             <View style={styles.productInfo}>
               <Text style={styles.productName} numberOfLines={2}>{product.name}</Text>
