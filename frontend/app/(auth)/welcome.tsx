@@ -3,7 +3,7 @@
 // ============================================================
 
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -11,6 +11,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../src/theme/ThemeContext';
 import { Button } from '../../src/components';
+import { useAuthStore } from '../../src/stores';
 
 const { width, height } = Dimensions.get('window');
 
@@ -19,6 +20,22 @@ export default function WelcomeScreen() {
   const insets = useSafeAreaInsets();
   const { theme } = useTheme();
   const { t } = useTranslation();
+  const login = useAuthStore((state) => state.login);
+  const setOnboarded = useAuthStore((state) => state.setOnboarded);
+
+  // Demo login for quick access
+  const handleDemoLogin = () => {
+    const demoUser = {
+      id: 'demo-user-1',
+      email: 'demo@styleadvisor.ai',
+      name: 'Demo User',
+      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop',
+      createdAt: new Date().toISOString(),
+    };
+    login(demoUser, 'demo-token-123');
+    setOnboarded(true);
+    router.replace('/(tabs)/home');
+  };
 
   const styles = StyleSheet.create({
     container: {
@@ -123,8 +140,14 @@ export default function WelcomeScreen() {
 
       <View style={styles.bottomSection}>
         <Button
+          title="🚀 Demo Giriş (Hızlı Erişim)"
+          onPress={handleDemoLogin}
+          fullWidth
+        />
+        <Button
           title={t('auth.welcome.loginButton')}
           onPress={() => router.push('/(auth)/login')}
+          variant="outline"
           fullWidth
         />
         <Button

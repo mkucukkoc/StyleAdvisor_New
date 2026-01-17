@@ -1,10 +1,5 @@
 {
   "env_image_name": "expo_mongo_base_image_cloud_arm:release-09012026-2",
-<<<<<<< HEAD
   "job_id": "f8f64be3-eba2-406e-971e-c685a3f92ff3",
-  "created_at": "2026-01-17T17:02:30.212403+00:00Z"
-=======
-  "job_id": "ed0b1997-f037-43f4-88ce-bc4d1cb380b2",
-  "created_at": "2026-01-17T08:22:07.338398+00:00Z"
->>>>>>> d4b6ccd (initial commit)
+  "created_at": "2026-01-17T19:15:08.592516+00:00Z"
 }

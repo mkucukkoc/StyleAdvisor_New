@@ -136,6 +136,7 @@ export interface WardrobeItem {
   color: string;
   brand?: string;
   imageBase64?: string;
+  imageUrl?: string;
   purchaseDate?: string;
   price?: number;
   notes?: string;

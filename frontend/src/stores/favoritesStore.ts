@@ -6,6 +6,7 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Outfit, Product } from '../types';
+import { mockOutfits, mockProducts } from '../services/api/mockData';
 
 interface FavoritesState {
   outfits: Outfit[];
@@ -26,9 +27,13 @@ interface FavoritesActions {
   reset: () => void;
 }
 
+// Get favorite items from mock data
+const mockFavoriteOutfits = mockOutfits.filter(o => o.isFavorite);
+const mockFavoriteProducts = mockProducts.filter(p => p.isFavorite);
+
 const initialState: FavoritesState = {
-  outfits: [],
-  products: [],
+  outfits: mockFavoriteOutfits,
+  products: mockFavoriteProducts,
   isLoading: false,
 };
 

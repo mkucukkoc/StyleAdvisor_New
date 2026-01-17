@@ -10,6 +10,7 @@ import {
   ScrollView,
   TouchableOpacity,
   RefreshControl,
+  Image,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -273,26 +274,35 @@ export default function HomeScreen() {
       {/* Daily Outfit Idea */}
       <Text style={styles.sectionTitle}>{t('home.dailyOutfit.title')}</Text>
       <TouchableOpacity style={styles.dailyOutfitCard} activeOpacity={0.8}>
-        <LinearGradient
-          colors={['#7C3AED', '#5B21B6']}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.dailyOutfitGradient}
-        >
-          <Text style={styles.dailyOutfitTitle}>
-            {mockDailyOutfitIdeas[0]?.title || 'Monday Power Look'}
-          </Text>
-          <Text style={styles.dailyOutfitDescription}>
-            {mockDailyOutfitIdeas[0]?.description || 'Start your week with confidence'}
-          </Text>
-          <Button
-            title={t('home.dailyOutfit.viewDetails')}
-            onPress={() => {}}
-            variant="secondary"
-            size="small"
-            style={{ alignSelf: 'flex-start' }}
-          />
-        </LinearGradient>
+        <View style={{ flexDirection: 'row', overflow: 'hidden', borderRadius: 20 }}>
+          {mockDailyOutfitIdeas[0]?.imageUrl && (
+            <Image
+              source={{ uri: mockDailyOutfitIdeas[0].imageUrl }}
+              style={{ width: 120, height: 160 }}
+              resizeMode="cover"
+            />
+          )}
+          <LinearGradient
+            colors={['#7C3AED', '#5B21B6']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={[styles.dailyOutfitGradient, { flex: 1 }]}
+          >
+            <Text style={styles.dailyOutfitTitle}>
+              {mockDailyOutfitIdeas[0]?.title || 'Monday Power Look'}
+            </Text>
+            <Text style={styles.dailyOutfitDescription}>
+              {mockDailyOutfitIdeas[0]?.description || 'Start your week with confidence'}
+            </Text>
+            <Button
+              title={t('home.dailyOutfit.viewDetails')}
+              onPress={() => {}}
+              variant="secondary"
+              size="small"
+              style={{ alignSelf: 'flex-start' }}
+            />
+          </LinearGradient>
+        </View>
       </TouchableOpacity>
 
       {/* Prompt Chips */}
@@ -325,7 +335,15 @@ export default function HomeScreen() {
         <View style={styles.trendsGrid}>
           {mockTrends.slice(0, 2).map((trend) => (
             <View key={trend.id} style={styles.trendItem}>
-              <View style={[styles.trendColor, { backgroundColor: trend.color }]} />
+              {trend.imageUrl ? (
+                <Image
+                  source={{ uri: trend.imageUrl }}
+                  style={[styles.trendColor, { width: '100%', height: 100 }]}
+                  resizeMode="cover"
+                />
+              ) : (
+                <View style={[styles.trendColor, { backgroundColor: trend.color }]} />
+              )}
               <Text style={styles.trendTitle}>{trend.title}</Text>
             </View>
           ))}

@@ -6,6 +6,7 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { WardrobeItem, WardrobeCategory } from '../types';
+import { mockWardrobeItems } from '../services/api/mockData';
 
 interface WardrobeState {
   items: WardrobeItem[];
@@ -24,10 +25,12 @@ interface WardrobeActions {
   setItems: (items: WardrobeItem[]) => void;
   setLoading: (value: boolean) => void;
   reset: () => void;
+  initializeWithMockData: () => void;
 }
 
+// Initialize with mock data for demo purposes
 const initialState: WardrobeState = {
-  items: [],
+  items: mockWardrobeItems,
   selectedCategory: 'all',
   isLoading: false,
 };
@@ -90,7 +93,10 @@ export const useWardrobeStore = create<WardrobeState & WardrobeActions>()(
         set({ isLoading: value }),
 
       reset: () => 
-        set(initialState),
+        set({ ...initialState, items: mockWardrobeItems }),
+
+      initializeWithMockData: () =>
+        set({ items: mockWardrobeItems }),
     }),
     {
       name: 'styleadvisor-wardrobe',

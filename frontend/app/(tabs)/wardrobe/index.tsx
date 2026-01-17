@@ -3,7 +3,7 @@
 // ============================================================
 
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -210,14 +210,22 @@ export default function WardrobeHomeScreen() {
                 })}
               >
                 <View style={styles.itemImage}>
-                  <View
-                    style={{
-                      width: 60,
-                      height: 60,
-                      borderRadius: 12,
-                      backgroundColor: item.color,
-                    }}
-                  />
+                  {item.imageUrl ? (
+                    <Image
+                      source={{ uri: item.imageUrl }}
+                      style={{ width: '100%', height: '100%' }}
+                      resizeMode="cover"
+                    />
+                  ) : (
+                    <View
+                      style={{
+                        width: 60,
+                        height: 60,
+                        borderRadius: 12,
+                        backgroundColor: item.color,
+                      }}
+                    />
+                  )}
                   {item.isFavorite && (
                     <Ionicons
                       name="heart"
