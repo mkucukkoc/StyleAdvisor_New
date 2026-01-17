@@ -218,6 +218,59 @@
       "startFirst": "Start your first analysis"
     }
   },
+  "trends": {
+    "title": "Trends & Inspiration",
+    "filters": {
+      "title": "Filter Trends",
+      "categories": "Categories",
+      "styles": "Styles",
+      "seasons": "Seasons"
+    },
+    "empty": "No trends found",
+    "emptySubtitle": "Try adjusting your filters"
+  },
+  "wardrobe": {
+    "home": {
+      "title": "My Wardrobe",
+      "addItem": "Add Item",
+      "empty": "Your wardrobe is empty",
+      "emptySubtitle": "Start adding items to build your digital closet"
+    },
+    "categories": {
+      "all": "All",
+      "tops": "Tops",
+      "bottoms": "Bottoms",
+      "dresses": "Dresses",
+      "outerwear": "Outerwear",
+      "shoes": "Shoes",
+      "accessories": "Accessories",
+      "bags": "Bags"
+    },
+    "addItem": {
+      "title": "Add Wardrobe Item",
+      "photo": "Item Photo",
+      "takePhoto": "Take Photo",
+      "selectPhoto": "Select from Gallery",
+      "name": "Item Name",
+      "namePlaceholder": "e.g., Blue Oxford Shirt",
+      "category": "Category",
+      "brand": "Brand (Optional)",
+      "brandPlaceholder": "e.g., Ralph Lauren",
+      "color": "Color",
+      "saveButton": "Save to Wardrobe"
+    },
+    "itemDetail": {
+      "title": "Item Details",
+      "edit": "Edit",
+      "delete": "Delete",
+      "deleteConfirm": "Are you sure you want to delete this item?",
+      "wornWith": "Worn With"
+    },
+    "outfitBuilder": {
+      "title": "Outfit Builder",
+      "description": "Mix and match items from your wardrobe"
+    }
+  },
   "analyze": {
     "start": {
       "title": "Analyze Your Style",
