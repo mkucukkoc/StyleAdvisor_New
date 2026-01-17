@@ -93,7 +93,10 @@ export const useWardrobeStore = create<WardrobeState & WardrobeActions>()(
         set({ isLoading: value }),
 
       reset: () => 
-        set(initialState),
+        set({ ...initialState, items: mockWardrobeItems }),
+
+      initializeWithMockData: () =>
+        set({ items: mockWardrobeItems }),
     }),
     {
       name: 'styleadvisor-wardrobe',
