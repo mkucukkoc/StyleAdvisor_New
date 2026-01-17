@@ -515,23 +515,27 @@ export const mockTrends = [
     title: 'Quiet Luxury',
     description: 'Understated elegance is in',
     color: '#D4AF37',
+    imageUrl: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=500&fit=crop',
   },
   {
     id: 'trend-2',
     title: 'Earth Tones',
     description: 'Nature-inspired palettes',
     color: '#8B7355',
+    imageUrl: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=500&fit=crop',
   },
   {
     id: 'trend-3',
     title: 'Minimalist Chic',
     description: 'Less is more',
     color: '#F5F5F5',
+    imageUrl: 'https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=400&h=500&fit=crop',
   },
   {
     id: 'trend-4',
     title: 'Power Suits',
     description: 'Bold and structured',
     color: '#1E3A5F',
+    imageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&h=500&fit=crop',
   },
 ];
