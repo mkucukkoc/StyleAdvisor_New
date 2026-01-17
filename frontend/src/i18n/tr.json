@@ -228,6 +228,13 @@
       "textDescription": "Ne giydiğinizi bize anlatın",
       "recentTitle": "Son Analizler"
     },
+    "photoSource": {
+      "title": "Fotoğraf Kaynağı Seçin",
+      "camera": "Fotoğraf Çek",
+      "cameraDesc": "Kıyafetinizi çekmek için kameranızı kullanın",
+      "gallery": "Galeriden Seç",
+      "galleryDesc": "Kütüphanenizden mevcut bir fotoğraf seçin"
+    },
     "photoCapture": {
       "title": "Kıyafetinizi Çekin",
       "instructions": "İyi aydınlatmada durun ve tüm kıyafetinizi çekin",
