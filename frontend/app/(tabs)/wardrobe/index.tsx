@@ -210,14 +210,22 @@ export default function WardrobeHomeScreen() {
                 })}
               >
                 <View style={styles.itemImage}>
-                  <View
-                    style={{
-                      width: 60,
-                      height: 60,
-                      borderRadius: 12,
-                      backgroundColor: item.color,
-                    }}
-                  />
+                  {item.imageUrl ? (
+                    <Image
+                      source={{ uri: item.imageUrl }}
+                      style={{ width: '100%', height: '100%' }}
+                      resizeMode="cover"
+                    />
+                  ) : (
+                    <View
+                      style={{
+                        width: 60,
+                        height: 60,
+                        borderRadius: 12,
+                        backgroundColor: item.color,
+                      }}
+                    />
+                  )}
                   {item.isFavorite && (
                     <Ionicons
                       name="heart"
