@@ -10,17 +10,17 @@ from typing import List
 import uuid
 from datetime import datetime
 
-# Import all server routers
-from server.auth import router as auth_router
-from server.email_otp import router as email_otp_router
-from server.google_auth import router as google_auth_router
-from server.apple_auth import router as apple_auth_router
-from server.password_reset import router as password_reset_router
-from server.pdf_read import router as pdf_read_router
-from server.notifications import router as notifications_router
-from server.delete_account import router as delete_account_router
-from server.premium import router as premium_router
-from server.webhooks import router as webhooks_router
+# Import all routers
+from routers.auth import router as auth_router
+from routers.email_otp import router as email_otp_router
+from routers.google_auth import router as google_auth_router
+from routers.apple_auth import router as apple_auth_router
+from routers.password_reset import router as password_reset_router
+from routers.pdf_read import router as pdf_read_router
+from routers.notifications import router as notifications_router
+from routers.delete_account import router as delete_account_router
+from routers.premium import router as premium_router
+from routers.webhooks import router as webhooks_router
 
 
 ROOT_DIR = Path(__file__).parent
