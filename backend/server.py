@@ -22,7 +22,6 @@ from routers.delete_account import router as delete_account_router
 from routers.premium import router as premium_router
 from routers.webhooks import router as webhooks_router
 
-
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
@@ -43,7 +42,6 @@ api_router = APIRouter(prefix="/api")
 
 # Create versioned API router
 api_v1_router = APIRouter(prefix="/api/v1")
-
 
 # Define Models
 class StatusCheck(BaseModel):

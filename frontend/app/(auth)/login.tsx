@@ -18,8 +18,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../src/theme/ThemeContext';
 import { Button, Input } from '../../src/components';
-import { useAuthStore, useUIStore } from '../../src/stores';
-import { authApi } from '../../src/services/api';
+import { useAuthStore } from '../../src/stores';
 import { analytics } from '../../src/services';
 
 export default function LoginScreen() {
@@ -29,42 +28,23 @@ export default function LoginScreen() {
   const { t } = useTranslation();
   const login = useAuthStore((state) => state.login);
   const setOnboarded = useAuthStore((state) => state.setOnboarded);
-  const showToast = useUIStore((state) => state.showToast);
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
-
-  const validate = () => {
-    const newErrors: typeof errors = {};
-    if (!email) newErrors.email = 'Email is required';
-    else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = 'Invalid email';
-    if (!password) newErrors.password = 'Password is required';
-    else if (password.length < 4) newErrors.password = 'Password too short';
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
 
   const handleLogin = async () => {
-    if (!validate()) return;
-
-    setLoading(true);
-    try {
-      const response = await authApi.login(email, password);
-      if (response.success && response.data) {
-        login(response.data.user, response.data.token);
-        setOnboarded(true); // For demo, assume onboarded
-        analytics.track('login_success');
-        showToast({ type: 'success', message: t('auth.login.success') });
-        router.replace('/(tabs)/home');
-      }
-    } catch (error: any) {
-      analytics.track('login_failure');
-      showToast({ type: 'error', message: error.message || t('auth.login.invalidCredentials') });
-    } finally {
-      setLoading(false);
-    }
+    const now = new Date().toISOString();
+    login(
+      {
+        id: 'demo-user',
+        email: email || 'demo@styleadvisor.app',
+        name: 'Demo User',
+        createdAt: now,
+      },
+      'demo-token'
+    );
+    setOnboarded(true); // For demo, assume onboarded
+    analytics.track('login_bypass');
+    router.replace('/(tabs)/home');
   };
 
   const styles = StyleSheet.create({
@@ -180,7 +160,6 @@ export default function LoginScreen() {
             keyboardType="email-address"
             autoCapitalize="none"
             leftIcon="mail-outline"
-            error={errors.email}
           />
           <Input
             label={t('auth.login.passwordLabel')}
@@ -189,7 +168,6 @@ export default function LoginScreen() {
             onChangeText={setPassword}
             secureTextEntry
             leftIcon="lock-closed-outline"
-            error={errors.password}
           />
           <TouchableOpacity
             style={styles.forgotPassword}
@@ -201,7 +179,6 @@ export default function LoginScreen() {
           <Button
             title={t('auth.login.loginButton')}
             onPress={handleLogin}
-            loading={loading}
             fullWidth
           />
         </View>
