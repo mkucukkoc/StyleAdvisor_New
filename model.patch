@@ -1,0 +1,16 @@
+diff --git a/frontend/src/stores/wardrobeStore.ts b/frontend/src/stores/wardrobeStore.ts
+index e776a5b..04a3a86 100644
+--- a/frontend/src/stores/wardrobeStore.ts
++++ b/frontend/src/stores/wardrobeStore.ts
+@@ -93,7 +93,10 @@ export const useWardrobeStore = create<WardrobeState & WardrobeActions>()(
+         set({ isLoading: value }),
+ 
+       reset: () => 
+-        set(initialState),
++        set({ ...initialState, items: mockWardrobeItems }),
++
++      initializeWithMockData: () =>
++        set({ items: mockWardrobeItems }),
+     }),
+     {
+       name: 'styleadvisor-wardrobe',
